@@ -6,11 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.send(createTemplate(article));
+  res.send(path.join(__dirname,'ui','index.html'));
 });
 
 app.get('/article',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','article1.html'));
+    res.sendFile(createTemplate(article1));
 });
 
 app.get('/ui/style.css', function (req, res) {
@@ -21,7 +21,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-var content = {
+var article1 = {
     title:'Article 1',
     heading:'Article One',
     date:'11-03-2018',
