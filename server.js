@@ -23,12 +23,14 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var articles= {
-    article1: {
-        title:'Article 1',
-        heading:'Article One',
-        date:'11-03-2018',
-        content:`
-        This is my First article`
+    'article-one': {
+        title: 'Article 1',
+        heading: 'Article One',
+        date: '11-03-2018',
+        content: 
+        `
+        This is my First article
+        `
     },
     article2: {
         title:'Article 2',
@@ -45,7 +47,7 @@ var articles= {
         This is my Third article`
     },
 };
-function createTemplate (data)
+function createTemplate(data)
 {
     var title=data.title;
     var date=data.date;
