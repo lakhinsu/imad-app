@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get(':/articlename',function(req,res){
-    var articlename=req.params.aritclename
+    var articlename=req.params.aritclename;
     res.send(createTemplate(articles[articlename]));
 });
 
