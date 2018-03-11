@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
-app.get(':/article',function(req,res){
-    var articlename=req.params.aritcle
+app.get(':/articlename',function(req,res){
+    var articlename=req.params.aritclename
     res.send(createTemplate(articles[articlename]));
 });
 
