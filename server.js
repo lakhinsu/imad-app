@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName',function(req,res){
-    var articleName = req.params.aritcleName;
-    res.send(createTemplate(articles[articleName]));
+    var article = req.params.aritcleName;
+    res.send(createTemplate(articles[article]));
 });
 
 app.get('/ui/style.css', function (req, res) {
