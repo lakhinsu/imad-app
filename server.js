@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName',function(req,res){
-    var articleName=req.params.aritcleName;
+    var articleName = req.params.aritcleName;
     res.send(createTemplate(articles[articleName]));
 });
 
@@ -23,7 +23,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var articles= {
-    'article-one': {
+    article1:{
         title: 'Article 1',
         heading: 'Article One',
         date: '11-03-2018',
@@ -32,7 +32,7 @@ var articles= {
         This is my First article
         `
     },
-    article2: {
+    article2:{
         title:'Article 2',
         heading:'Article One',
         date:'12-03-2018',
