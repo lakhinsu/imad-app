@@ -26,21 +26,7 @@ var article1 = {
     heading:'Article One',
     date:'11-03-2018',
     content:`
-    <div class="container">
-            <div>
-                <a href="/">Home</a>
-            </div>
-            <hr/>
-            <div>
-                Article 1    
-            </div>
-            <div>
-                11-03-2018
-            </div>
-            <div>
-                This is my first article :)
-            </div>
-    </div>`
+    This is my first article`
 };
 function createTemplate (data)
 {
