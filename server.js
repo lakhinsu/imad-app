@@ -9,9 +9,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
-app.get('/:articlename',function(req,res){
-    var articlename=req.params.aritclename;
-    res.send(createTemplate(articles[articlename]));
+app.get('/:article',function(req,res){
+    var article=req.params.aritcle;
+    res.send(createTemplate(articles[article]));
 });
 
 app.get('/ui/style.css', function (req, res) {
