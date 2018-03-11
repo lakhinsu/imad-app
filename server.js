@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.send(createTemplate(article));
 });
 
 app.get('/article',function(req,res){
@@ -20,6 +20,63 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+
+var content = {
+    title:'Article 1',
+    heading:'Article One',
+    date:'11-03-2018',
+    content:`
+    <div class="container">
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <hr/>
+            <div>
+                Article 1    
+            </div>
+            <div>
+                11-03-2018
+            </div>
+            <div>
+                This is my first article :)
+            </div>
+    </div>`
+};
+function createTemplate (data)
+{
+    var title=data.title;
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
+    var htmlContent = 
+        `
+        <html>
+        <head>
+            <title>
+               ${title}
+            </title>    
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <hr/>
+                <div>
+                    ${heading}
+                </div>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                    ${content}
+                </div>
+            </div>
+        </body>
+    </html>
+        `;
+}
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
