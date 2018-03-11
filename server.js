@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
-app.get(':/articlename',function(req,res){
+app.get('/:articlename',function(req,res){
     var articlename=req.params.aritclename;
     res.send(createTemplate(articles[articlename]));
 });
